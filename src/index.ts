@@ -8,8 +8,12 @@ export interface Config {
 }
 
 export const Config: Schema<Config> = Schema.object({
-  adminId: Schema.string().required(),
+  adminId: Schema.string().required().description("管理员的用户id (可以使用 inspect 指令获取)"),
 })
+
+export const usage = `
+<p>请我喝杯咖啡 👉<a href="https://ko-fi.com/itzdrli"><img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="ko-fi"></a></p>
+`
 
 export const inject = ['database']
 
