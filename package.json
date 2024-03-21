@@ -14,7 +14,17 @@
     "koishi",
     "plugin"
   ],
+  "author": "Itz_Dr_Li",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itzdrli/koishi-plugin-helpdesk.git"
+  },
   "peerDependencies": {
     "koishi": "^4.17.2"
+  },
+  "devDependencies": {
+    "koishi": "^4.17.2",
+    "typescript": "^5.3.3",
+    "yml-register": "^1.1.0"
   }
 }
