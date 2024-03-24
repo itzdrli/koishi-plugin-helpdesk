@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-helpdesk",
   "description": "HelpDesk工单系统",
-  "version": "0.0.4",
+  "version": "0.1.0-alpha.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
