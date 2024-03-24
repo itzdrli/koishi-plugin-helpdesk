@@ -32,7 +32,7 @@ export function reply(ctx: Context, config: Config) {
       回复时间: ${dateIso}
       工单状态: ${ticketStatus[2]}
       使用指令
-      \`reply ${id} 信息\`
+      \`hd reply ${id} 信息\`
       来回复工单`)
 
     return `工单已回复，编号为 ${id}

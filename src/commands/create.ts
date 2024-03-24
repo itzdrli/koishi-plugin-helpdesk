@@ -35,7 +35,7 @@ export function create (ctx: Context, config: Config) {
         创建时间: ${dateIso}
         工单状态: ${ticketStatus[0]}
         使用指令
-        \`adminreply ${res.id} 信息\`
+        \`hd adminreply ${res.id} 信息\`
         来回复工单`)
       return`工单已创建，编号为 ${res.id}
         内容: ${message}
