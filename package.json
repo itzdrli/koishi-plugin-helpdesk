@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-helpdesk",
   "description": "HelpDesk工单系统",
-  "version": "0.1.0-alpha.1",
+  "version": "0.2.0-alpha.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "koishi": "^4.17.2",
-    "typescript": "^5.3.3",
-    "yml-register": "^1.1.0"
+    "typescript": "^5.5.0-dev.20240328",
+    "yml-register": "^1.2.5"
   }
 }

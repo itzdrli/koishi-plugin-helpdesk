@@ -8,11 +8,11 @@ import { create } from './commands/create'
 export const name = 'helpdesk'
 
 export interface Config {
-  adminId: string
+  adminId: any
 }
 
 export const Config: Schema<Config> = Schema.object({
-  adminId: Schema.string().description("管理员的用户id (可以使用 inspect 指令获取)"),
+  adminId: Schema.array(Schema.string()).role('table').description("管理员的用户id (可以使用 inspect 指令获取)")
 })
 
 export function getAvatar(session) {
@@ -21,7 +21,8 @@ export function getAvatar(session) {
 }
 
 export const usage = `
-<p>请我喝杯咖啡 👉<a href="https://ko-fi.com/itzdrli"><img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="ko-fi"></a></p>
+<h1><a href="https://ticket.itzdrli.com/">工单预览器</a></h1> <p>👆点我</p>
+<p>请我喝杯咖啡 👉<a href="https://ko-fi.com/itzdrli"><img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="ko-fi"></a></p> <a href="https://afdian.net/a/itzdrli">爱发电</a>
 `
 
 export const inject = ['database']
@@ -82,15 +83,6 @@ export function apply(ctx: Context, config: Config) {
     autoInc: true,
   })
   ctx.command("helpdesk", "工单系统", { authority: 0 }).alias('hd')
-  ctx.command("userinfo")
-    .action(async ({ session }, user) => {
-      if (!user) {
-        return `请提供用户信息`
-      } else {
-        const { type, attrs } = h.parse(user)[0]
-        if ( type === 'at' ) return `id: ${attrs.id}, username: ${attrs.name}\n${(await session.bot.getGuildMember(session.guildId, attrs.id)).user.avatar}`
-      }
-    })
   create(ctx, config)
   assign(ctx, config)
   close(ctx, config)

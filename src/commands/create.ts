@@ -29,14 +29,16 @@ export function create (ctx: Context, config: Config) {
         ticketStatus: ticketStatus[0],
         creationDate: dateIso
       })
-      session.bot.sendPrivateMessage(config.adminId, 
-        `新工单: ${res.id}
-        内容: ${message}
-        创建时间: ${dateIso}
-        工单状态: ${ticketStatus[0]}
-        使用指令
-        \`hd adminreply ${res.id} 信息\`
-        来回复工单`)
+      for (let i = 0; i < config.adminId.length; i++) {
+        session.bot.sendPrivateMessage(config.adminId[i], 
+          `新工单: ${res.id}
+          内容: ${message}
+          创建时间: ${dateIso}
+          工单状态: ${ticketStatus[0]}
+          使用指令
+          \`hd adminreply ${res.id} 信息\`
+          来回复工单`)
+      }
       return`工单已创建，编号为 ${res.id}
         内容: ${message}
         创建时间: ${dateIso}

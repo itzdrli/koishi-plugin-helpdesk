@@ -5,7 +5,7 @@ import { ticketStatus } from '../index';
 export function adminReply(ctx: Context, config: Config) {
   ctx.command("helpdesk.adminReply <id:integer> <message>", "回复工单", { authority: 0 })
     .action(async ({ session }, id, message) => {
-      if (session.userId !== config.adminId) return "你没有权限回复工单"
+      if (!config.adminId.includes(session.userId)) return "你没有权限回复工单"
       const res = await ctx.database.get("helpdesk_list", { 
         id: id
       })
