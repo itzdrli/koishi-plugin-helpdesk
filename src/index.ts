@@ -21,6 +21,7 @@ export function getAvatar(session) {
 }
 
 export const usage = `
+<h2>如遇使用问题可以前往QQ群: 957500313 讨论<h2>
 <h1><a href="https://ticket.itzdrli.com/">工单预览器</a></h1> <p>👆点我</p>
 <p>请我喝杯咖啡 👉<a href="https://ko-fi.com/itzdrli"><img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="ko-fi"></a></p> <a href="https://afdian.net/a/itzdrli">爱发电</a>
 `
